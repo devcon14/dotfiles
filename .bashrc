@@ -118,6 +118,12 @@ fi
 
 # added by Miniconda 3.10.1 installer
 # export PATH="/home/conal_buchanan_gmail_com/miniconda/bin:$PATH"
+
+# enable vi before fzf to prevent clobbering keys
+# set -o vi
+# use ESC+e to enable vi editing
+bind '"\ee": vi-editing-mode'
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -129,6 +135,9 @@ source '/home/conal_buchanan_gmail_com/google-cloud-sdk/path.bash.inc'
 source '/home/conal_buchanan_gmail_com/google-cloud-sdk/completion.bash.inc'
 
 export PATH=$PATH:/home/conal_buchanan_gmail_com/Downloads/google_appengine/
-PATH=$PATH:/home/conal_buchanan_gmail_com/.rubies/ruby-2.2.2/bin
+export PATH=$PATH:/d1/public/acute
+export PATH=$PATH:/home/conal_buchanan_gmail_com/packages/apache-maven-3.3.3/bin
+export PATH=$PATH:/home/conal_buchanan_gmail_com/.rubies/ruby-2.2.2/bin
 export PATH
 alias vi=nvim
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64

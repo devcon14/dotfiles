@@ -15,6 +15,8 @@ Plug 'vim-scripts/python-imports.vim'
 " python imports...
 " Plug 'dbsr/vimpy', { 'for': 'python' }
 
+Plug 'vim-scripts/repmo.vim'
+
 " my custom plugin
 " ================
 Plug '/d1/public/vim-ipytrace'
@@ -34,7 +36,7 @@ Plug 'tpope/vim-surround'
 Plug 'Valloric/MatchTagAlways'
 " Plug 'Raimondi/delimitMate'
 " matchem, improved on delimitMate
-Plug 'ervandew/matchem'
+" Plug 'ervandew/matchem'
 
 " html tag closer + language
 Plug 'rstacruz/sparkup'
@@ -47,11 +49,18 @@ Plug 'rstacruz/sparkup'
 " Plug 'matthewsimo/angular-vim-snippets'
 " Plug 'chrisgillis/vim-bootstrap3-snippets'
 Plug 'majutsushi/tagbar'
-let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
-Plug 'luochen1990/rainbow'
+" let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
+" Plug 'luochen1990/rainbow'
 Plug 'bkad/CamelCaseMotion'
 Plug 'michaeljsmith/vim-indent-object'
 " Plug 'plasticboy/vim-markdown'
+Plug 'digitaltoad/vim-jade'
+
+Plug 'mxw/vim-jsx'
+" Plug 'yannickcr/eslint-plugin-react'
+" jsbeautify & autopep8 is used by AutoFormat
+" Plug 'maksimr/vim-jsbeautify'
+Plug 'Chiel92/vim-autoformat'
 
 " tryouts
 " =======
@@ -96,6 +105,13 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 \ })<CR>
 " airline
 set laststatus=2
+
+vnoremap <leader>hj !html2jade<CR>
+vnoremap <leader>jh !jade<CR>
+vnoremap <leader>f :Autoformat<cr>
+nmap <leader>= :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
 
 filetype plugin on
 filetype indent on
