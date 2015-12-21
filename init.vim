@@ -1,8 +1,10 @@
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
+" neovim async syntastic like plugin
+" Plug 'benekastah/neomake'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'tpope/vim-fugitive'
 
@@ -19,8 +21,13 @@ Plug 'vim-scripts/repmo.vim'
 
 " my custom plugin
 " ================
-Plug '/d1/public/vim-ipytrace'
-" Plug 'devcon14/vim-ipytrace'
+" FIXME consider calling this jupyterREPL or similar
+" Plug '/d1/public/vim-ipytrace'
+Plug 'devcon14/vim-ipytrace'
+
+" neovim jupyter plugin based on ivanov/vim-ipython
+" didn't work for me, (couldn't start kernel), lacks stack trace follow
+" Plug 'bfredl/nvim-ipy'
 
 " colorschemes
 " ============
@@ -74,8 +81,9 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 " <c-k> is also used for special characters, do we care?
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501'
+" let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_python_checkers = ['pylama']
 let ropevim_vim_completion=0
 " let g:ropevim_enable_autoimport=1
 " let g:ropevim_autoimport_modules = ["shutil", "os"]
@@ -103,6 +111,8 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 \   'options':     '+m',
 \   'tmux_height': '40%'
 \ })<CR>
+
+
 " airline
 set laststatus=2
 
